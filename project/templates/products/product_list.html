@@ -1,4 +1,6 @@
+
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +10,25 @@
     <link rel="stylesheet" href="{% static 'css/product_list.css' %}">
 </head>
 <body>
+    <div class="container">
     <h1>Products</h1>
 
+    
     <form method="get" action="">
         <input type="text" name="q" placeholder="Search by name" value="{{ request.GET.q }}">
         <input type="text" name="category" placeholder="Category" value="{{ request.GET.category }}">
         <input type="number" name="min_price" placeholder="Min Price" value="{{ request.GET.min_price }}">
         <input type="number" name="max_price" placeholder="Max Price" value="{{ request.GET.max_price }}">
+
+       
+        <select name="order_by">
+            <option value="id" {% if request.GET.order_by == "id" %}selected{% endif %}>Default</option>
+            <option value="name" {% if request.GET.order_by == "name" %}selected{% endif %}>Name (A-Z)</option>
+            <option value="-name" {% if request.GET.order_by == "-name" %}selected{% endif %}>Name (Z-A)</option>
+            <option value="price" {% if request.GET.order_by == "price" %}selected{% endif %}>Price (Low → High)</option>
+            <option value="-price" {% if request.GET.order_by == "-price" %}selected{% endif %}>Price (High → Low)</option>
+        </select>
+
         <button type="submit">Filter</button>
     </form>
 
@@ -34,7 +48,6 @@
         {% endfor %}
     </ul>
 
-    
     <div class="pagination">
         {% if is_paginated %}
             <span>
@@ -60,5 +73,6 @@
             {% endif %}
         {% endif %}
     </div>
+</div>
 </body>
 </html>
