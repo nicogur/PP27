@@ -1,14 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
+    <link rel="stylesheet" href="{% static 'css/product_list.css' %}">
 </head>
 <body>
     <h1>Products</h1>
 
-    <!-- Search & Filter Form -->
     <form method="get" action="">
         <input type="text" name="q" placeholder="Search by name" value="{{ request.GET.q }}">
         <input type="text" name="category" placeholder="Category" value="{{ request.GET.category }}">
@@ -33,7 +34,7 @@
         {% endfor %}
     </ul>
 
-    <!-- Pagination -->
+    
     <div class="pagination">
         {% if is_paginated %}
             <span>

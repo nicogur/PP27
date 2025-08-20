@@ -1,0 +1,104 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #d4fc79, #96e6a1);
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+form input {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+form button {
+    padding: 8px 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #0056b3;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+li {
+    background: white;
+    margin: 8px 0;
+    padding: 12px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+}
+
+li a:hover {
+    color: #007bff;
+}
+
+
+.pagination {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.pagination span {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.pagination a, .pagination strong {
+    margin: 0 5px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.pagination a {
+    background: #007bff;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.pagination a:hover {
+    background: #0056b3;
+}
+
+.pagination strong {
+    background: #444;
+    color: white;
+}
