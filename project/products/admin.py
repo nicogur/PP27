@@ -6,20 +6,8 @@ admin.site.site_header = "My shop Admin"
 admin.site.site_title = "My shop portal"
 admin.site.index_title = 'Welcome to my shop portal'
 
-# ////////////////////////////////////////////////////////
-# admin.site.register(Product)
 
-# @admin.register(Product)
-# class ProductAdmin(admin.ModelAdmin):
-#     list_display = ('name','price', 'in_stock')
-#     list_filter= ('in_stock',)
-#     search_fields = ('name',)
-#     ordering = ('-name',)   # price
-#     list_editable = ( 'in_stock',)
 
-    # readonly_fields = ('price', )
-    # fields = ('name','price', 'in_stock')   # edit formebistvisaa magram rame fieldtan shetanxmebit 
-# ////////////////////////////////////////////////////////
 
 
 @admin.action(description='mark selected products as out of stock')
@@ -36,9 +24,8 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ('name','price', 'in_stock')
     list_filter= ('in_stock',)
     search_fields = ('name',)
-    ordering = ('-name',)   # price
-    # list_editable = ( 'in_stock',)
-
-    # readonly_fields = ('price', )
-    # fields = ('name','price', 'in_stock')   # edit formebistvisaa magram rame fieldtan shetanxmebit 
+    ordering = ('-name',)  
+    list_editable = ( 'in_stock',)
+    readonly_fields = ('price', )
+    fields = ('name','price', 'in_stock') 
     actions = [mark_out_of_stock, mark_in_stock]

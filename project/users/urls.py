@@ -1,8 +1,9 @@
+
 from django.urls import path
-from . import views
+from .views import RegisterView, ContactView, ProfileView
 
 urlpatterns = [
-    path('register/', views.register, name='register'),
-    path('contact/', views.contact_view, name='contact'),
-    path('profile/', views.profile, name = 'profile'),
+    path('register/', RegisterView.as_view(), name='register'),
+    path('contact/', ContactView.as_view(), name='contact'),
+    path('profile/', ProfileView.as_view(), name='profile'),
 ]
